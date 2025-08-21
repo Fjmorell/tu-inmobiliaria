@@ -7,9 +7,10 @@ const Header = () => {
 
   return (
     <header className="bg-emeraldDark text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 py-8 flex items-center justify-between">
+
         <Link to="/">
-          <img src={logo} alt="Tu Inmobiliaria Online" className="h-20 w-auto" />
+          <img src={logo} alt="Tu Inmobiliaria Online" className="h-32 w-auto" />
         </Link>
 
         <button
@@ -29,8 +30,8 @@ const Header = () => {
           <Link to="/" className="hover:text-gold transition">Comprar</Link>
           <Link to="/" className="hover:text-gold transition">Alquilar</Link>
           <Link to="/publicar" className="hover:text-gold transition">Vender</Link>
-          <Link to="/" className="hover:text-gold transition">Nosotros</Link>
-          <Link to="/" className="hover:text-gold transition">Contacto</Link>
+          <Link to="/nosotros" className="hover:text-gold transition">Nosotros</Link>
+          <Link to="/contacto" className="hover:text-gold transition">Contacto</Link>
         </nav>
       </div>
 
@@ -40,8 +41,8 @@ const Header = () => {
             <Link to="/" className="hover:text-gold transition">Comprar</Link>
             <Link to="/" className="hover:text-gold transition">Alquilar</Link>
             <Link to="/publicar" className="hover:text-gold transition">Vender</Link>
-            <Link to="/" className="hover:text-gold transition">Nosotros</Link>
-            <Link to="/" className="hover:text-gold transition">Contacto</Link>
+            <Link to="/nosotros" className="hover:text-gold transition">Nosotros</Link>
+            <Link to="/contacto" className="hover:text-gold transition">Contacto</Link>
           </nav>
         </div>
       )}

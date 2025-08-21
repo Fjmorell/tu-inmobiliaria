@@ -4,6 +4,10 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Publicar from './pages/Publicar'
 import FichaPropiedad from './pages/FichaPropiedad'
+import Nosotros from "./pages/Nosotros"
+import Contacto from './pages/Contacto';
+
+
 
 
 const App = () => {
@@ -14,6 +18,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/publicar" element={<Publicar />} />
           <Route path="/propiedad/:id" element={<FichaPropiedad />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/contacto" element={<Contacto />} />
+
+
 
         {/* Podés agregar más rutas después */}
       </Routes>
