@@ -1,7 +1,7 @@
 import React from 'react'
 import PropertyCard from '../components/PropertyCard'
 import properties from '../data/mockData'
-import videoFondo from '../assets/fondo-video.mp4' // 👈 agregá tu video en /src/assets
+import videoFondo from '../assets/fondo-video1.mp4' // 👈 agregá tu video en /src/assets
 
 const Home = () => {
   return (
