@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import Footer from './components/Footer';
 import Home from './pages/Home'
 import Publicar from './pages/Publicar'
 import FichaPropiedad from './pages/FichaPropiedad'
@@ -25,6 +26,8 @@ const App = () => {
 
         {/* Podés agregar más rutas después */}
       </Routes>
+      <Footer />
+
     </div>
   )
 }
