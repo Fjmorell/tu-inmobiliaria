@@ -29,8 +29,8 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Seguinos</h4>
           <div className="flex justify-center md:justify-start gap-4 text-xl">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp"><FaWhatsapp /></a>
+            <a href="https://www.instagram.com/inmobiliaria.smar" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://wa.me/5493794085421" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp"><FaWhatsapp /></a>
           </div>
         </div>
 
