@@ -54,11 +54,10 @@ const Header = () => {
       {menuOpen && (
         <div className="md:hidden bg-emeraldDark px-4 pb-4">
           <nav className="flex flex-col space-y-2 text-lg">
-            <Link to="/" className="hover:text-gold transition">Comprar</Link>
-            <Link to="/" className="hover:text-gold transition">Alquilar</Link>
-            <Link to="/publicar" className="hover:text-gold transition">Vender</Link>
-            <Link to="/nosotros" className="hover:text-gold transition">Nosotros</Link>
-            <Link to="/contacto" className="hover:text-gold transition">Contacto</Link>
+            <Link to="/" className="hover:text-gold transition">Propiedades</Link>
+          <Link to="/publicar" className="hover:text-gold transition">Tengo una propiedad</Link>
+          <Link to="/nosotros" className="hover:text-gold transition">Nosotros</Link>
+          <Link to="/contacto" className="hover:text-gold transition">Contacto</Link>
           </nav>
         </div>
       )}
