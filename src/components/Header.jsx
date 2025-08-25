@@ -7,10 +7,14 @@ const Header = () => {
 
   return (
     <header className="bg-emeraldDark text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo más grande */}
         <Link to="/">
-          <img src={logo} alt="Tu Inmobiliaria Online" className="h-20 md:h-32 w-auto" />
+          <img 
+  src={logo} 
+  alt="Tu Inmobiliaria Online" 
+  className="h-[9rem] md:h-[10rem] w-auto" 
+/>
         </Link>
 
         {/* Botón menú mobile */}
@@ -39,7 +43,6 @@ const Header = () => {
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex space-x-6 text-lg">
-          <Link to="/" className="hover:text-gold transition">Comprar</Link>
           <Link to="/" className="hover:text-gold transition">Propiedades</Link>
           <Link to="/publicar" className="hover:text-gold transition">Tengo una propiedad</Link>
           <Link to="/nosotros" className="hover:text-gold transition">Nosotros</Link>
