@@ -7,6 +7,8 @@ import Publicar from './pages/Publicar'
 import FichaPropiedad from './pages/FichaPropiedad'
 import Nosotros from "./pages/Nosotros"
 import Contacto from './pages/Contacto';
+import WhatsappButton from './components/WhatsappButton';
+
 
 
 
@@ -21,11 +23,14 @@ const App = () => {
           <Route path="/propiedad/:id" element={<FichaPropiedad />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contacto />} />
+          
 
 
 
         {/* Podés agregar más rutas después */}
       </Routes>
+            <WhatsappButton />
+
       <Footer />
 
     </div>
