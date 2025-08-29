@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../assets/logo_tu_inmobiliaria_PNG.png'
+import logo from '../assets/logosinfondosmart.png'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
