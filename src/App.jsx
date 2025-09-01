@@ -15,7 +15,7 @@ import WhatsappButton from './components/WhatsappButton';
 
 const App = () => {
   return (
-    <div className="font-sans bg-boneWhite min-h-screen">
+    <div className="font-sans  min-h-screen">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
