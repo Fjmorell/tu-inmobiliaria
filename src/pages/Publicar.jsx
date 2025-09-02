@@ -2,14 +2,10 @@ import React, { useState } from 'react'
 
 const Publicar = () => {
   const [formData, setFormData] = useState({
-    titulo: '',
-    ubicacion: '',
-    tipo: '',
-    operacion: '',
-    precio: '',
-    imagen: '',
     nombre: '',
     contacto: '',
+    ubicacion: '',
+    operacion: '',
   })
 
   const [enviado, setEnviado] = useState(false)
@@ -23,128 +19,118 @@ const Publicar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Propiedad enviada:', formData)
+    console.log('Lead recibido:', formData)
     setEnviado(true)
     setFormData({
-      titulo: '',
-      ubicacion: '',
-      tipo: '',
-      operacion: '',
-      precio: '',
-      imagen: '',
       nombre: '',
       contacto: '',
+      ubicacion: '',
+      operacion: '',
     })
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-emeraldDark font-sans text-center mb-6">
-  Publicar Propiedad
-</h1>
+    <div className="flex flex-col min-h-[calc(100vh-120px)] bg-white">
 
-
-      {enviado && (
-        <div className="bg-green-100 text-green-800 p-4 mb-6 rounded">
-          ✅ ¡Gracias! Tu propiedad fue enviada correctamente.
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-4 bg-gray-50 p-6 rounded shadow">
-        <input
-          type="text"
-          name="titulo"
-          placeholder="Título de la propiedad"
-          value={formData.titulo}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <input
-          type="text"
-          name="ubicacion"
-          placeholder="Ubicación"
-          value={formData.ubicacion}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <select
-            name="tipo"
-            value={formData.tipo}
-            onChange={handleChange}
-            required
-            className="w-full border border-gray-300 p-2 rounded"
-          >
-            <option value="">Tipo de propiedad</option>
-            <option value="Casa">Casa</option>
-            <option value="Departamento">Departamento</option>
-            <option value="Terreno">Terreno</option>
-          </select>
-
-          <select
-            name="operacion"
-            value={formData.operacion}
-            onChange={handleChange}
-            required
-            className="w-full border border-gray-300 p-2 rounded"
-          >
-            <option value="">Operación</option>
-            <option value="Venta">Venta</option>
-            <option value="Alquiler">Alquiler</option>
-          </select>
-        </div>
-
-        <input
-          type="number"
-          name="precio"
-          placeholder="Precio en USD o ARS"
-          value={formData.precio}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <input
-          type="text"
-          name="imagen"
-          placeholder="URL de imagen principal"
-          value={formData.imagen}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Tu nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <input
-          type="text"
-          name="contacto"
-          placeholder="Email o WhatsApp"
-          value={formData.contacto}
-          onChange={handleChange}
-          required
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-
-        <button
-          type="submit"
-          className="w-full bg-emeraldDark text-white font-semibold py-3 rounded hover:bg-emerald-800 transition"
+      {/* 🎥 HERO VIDEO - pantalla completa */}
+      <div className="relative w-full h-[60vh] overflow-hidden">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         >
-          Enviar propiedad
-        </button>
-      </form>
+          <source src="/src/assets/casachica.mp4" type="video/mp4" />
+          Tu navegador no soporta video.
+        </video>
+
+        {/* Capa oscura */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+
+        {/* Texto encima del video */}
+        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white text-center px-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2">¿Tenés una propiedad?</h1>
+          <p className="text-lg md:text-xl">Contactanos por WhatsApp o dejanos tus datos</p>
+        </div>
+      </div>
+
+      {/* CONTENIDO: Formulario + botón */}
+      <main className="flex-grow px-4 py-2">
+        <div className="w-full max-w-2xl mx-auto text-center">
+
+          
+          
+
+          {/* Botón WhatsApp */}
+          <a
+            href="https://wa.me/5493794085421?text=Hola,%20quiero%20publicar%20mi%20propiedad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-600 transition mb-8"
+          >
+            📲 Charlemos
+          </a>
+
+          {/* Mensaje de éxito */}
+          {enviado && (
+            <div className="bg-green-100 text-green-800 p-4 mb-6 rounded text-left max-w-md mx-auto">
+              ✅ ¡Gracias! Te vamos a contactar pronto.
+            </div>
+          )}
+
+          {/* Formulario */}
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 bg-gray-50 p-6 rounded shadow text-left text-black max-w-md mx-auto"
+          >
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre y Apellido"
+              value={formData.nombre}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 p-2 rounded"
+            />
+            <input
+              type="text"
+              name="contacto"
+              placeholder="Teléfono o WhatsApp"
+              value={formData.contacto}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 p-2 rounded"
+            />
+            <input
+              type="text"
+              name="ubicacion"
+              placeholder="Dirección o barrio"
+              value={formData.ubicacion}
+              onChange={handleChange}
+              className="w-full border border-gray-300 p-2 rounded"
+            />
+            <select
+              name="operacion"
+              value={formData.operacion}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 p-2 rounded"
+            >
+              <option value="">Tipo de operación</option>
+              <option value="Venta">Venta</option>
+              <option value="Alquiler">Alquiler</option>
+            </select>
+
+            <button
+              type="submit"
+              className="w-full bg-emeraldDark text-white font-semibold py-3 rounded hover:bg-emerald-800 transition"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+      </main>
     </div>
   )
 }
