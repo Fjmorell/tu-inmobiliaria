@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo_tu_inmobiliaria_PNG.png';
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -30,6 +30,8 @@ const Footer = () => {
           <div className="flex justify-center md:justify-start gap-4 text-xl">
             <a href="https://www.facebook.com/profile.php?id=61579036215233" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
             <a href="https://www.instagram.com/inmobiliaria.smar" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@inmobiliaria.smart" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok /></a>
+            <a href="https://www.linkedin.com/company/inmobiliaria-smart" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
             <a href="https://wa.me/5493794085421" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp"><FaWhatsapp /></a>
           </div>
         </div>
