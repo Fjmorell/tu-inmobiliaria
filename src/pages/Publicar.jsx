@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import videoSrc from '../assets/casachica.mp4'
 
 const Publicar = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ const Publicar = () => {
           loop
           playsInline
         >
-          <source src="/src/assets/casachica.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
           Tu navegador no soporta video.
         </video>
 
