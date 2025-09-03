@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo_tu_inmobiliaria_PNG.png';
+import logo from '../assets/logosinfondosmart.png';
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Logo */}
         <div>
           <img src={logo} alt="Logo" className="h-32 mx-auto md:mx-0 mb-4" />
-          <p className="text-sm">&copy; {new Date().getFullYear()} Tu Inmobiliaria. Todos los derechos reservados.</p>
+          
         </div>
 
         {/* Navegación */}
@@ -35,7 +35,7 @@ const Footer = () => {
             <a href="https://wa.me/5493794085421" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp"><FaWhatsapp /></a>
           </div>
         </div>
-
+<p className="text-sm">&copy; {new Date().getFullYear()} Inmobiliaria Smart. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

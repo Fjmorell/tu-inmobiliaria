@@ -53,6 +53,19 @@ const Publicar = () => {
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-2">¿Tenés una propiedad?</h1>
           <p className="text-lg md:text-xl">Contactanos por WhatsApp o dejanos tus datos</p>
+          
+            <div className="mt-10"> {/* separador para empujar el botón hacia abajo */}
+  <a
+    href="https://wa.me/5493794085421?text=Hola,%20quiero%20publicar%20mi%20propiedad"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-600 transition mb-8"
+  >
+    <img src="/src/assets/emoji-charlemos.png" alt="Emoji" className="w-6 h-6" />
+    Charlemos
+  </a>
+</div>
+
         </div>
       </div>
 
@@ -61,18 +74,6 @@ const Publicar = () => {
         <div className="w-full max-w-2xl mx-auto text-center">
 
           
-          
-
-          {/* Botón WhatsApp */}
-          <a
-            href="https://wa.me/5493794085421?text=Hola,%20quiero%20publicar%20mi%20propiedad"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-600 transition mb-8"
-          >
-            📲 Charlemos
-          </a>
-
           {/* Mensaje de éxito */}
           {enviado && (
             <div className="bg-green-100 text-green-800 p-4 mb-6 rounded text-left max-w-md mx-auto">
