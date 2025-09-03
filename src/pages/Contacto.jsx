@@ -28,7 +28,7 @@ const Contacto = () => {
             </div>
             <h3 className="text-xl font-bold mb-1">Soy propietario</h3>
             <p className="text-gray-600 text-sm">
-              Publicamos en 48 hs con fotos pro y campañas digitales. Gestión rápida y transparente.
+              Publicamos en 48 hs con fotos de calidad, tour virtual 360 y campañas digitales. Gestión rápida y transparente.
             </p>
           </div>
           <a
