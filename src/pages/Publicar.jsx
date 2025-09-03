@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import videoSrc from '../assets/casachica.mp4'
+import emojiCharlemos from '../assets/emoji-charlemos.png';
 
 const Publicar = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +62,8 @@ const Publicar = () => {
     rel="noopener noreferrer"
     className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded shadow hover:bg-green-600 transition mb-8"
   >
-    <img src="/src/assets/emoji-charlemos.png" alt="Emoji" className="w-6 h-6" />
+    <img src={emojiCharlemos} alt="Emoji" className="w-6 h-6" />
+
     Charlemos
   </a>
 </div>
