@@ -11,7 +11,7 @@ import WhatsappButton from './components/WhatsappButton'
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="h-full flex flex-col font-sans">
       <Header />
 
       {/* Contenido principal que se expande */}
