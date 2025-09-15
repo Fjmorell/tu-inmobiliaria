@@ -1,55 +1,78 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
-import properties from '../data/mockData'
+// src/pages/FichaPropiedad.jsx
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { supabase } from "../lib/supabase";
 
-const FichaPropiedad = () => {
-  const { id } = useParams()
-  const property = properties.find((p) => p.id === parseInt(id))
+function FichaPropiedad() {
+  const { id } = useParams();
+  const [propiedad, setPropiedad] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!property) {
-    return (
-      <div className="max-w-3xl mx-auto px-4 py-10">
-        <h1 className="text-2xl font-bold text-red-600">Propiedad no encontrada</h1>
-        <Link to="/" className="text-blue-600 underline mt-4 block">Volver al inicio</Link>
-      </div>
-    )
-  }
+  useEffect(() => {
+    const fetchPropiedad = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("properties")
+          .select("id, title, price, description, image_url, location, type, bedrooms, bathrooms, size_m2, status")
+          .eq("id", id)
+          .single();
+
+        if (error) throw error;
+        setPropiedad(data);
+      } catch (err) {
+        console.error("❌ Error al cargar propiedad:", err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPropiedad();
+  }, [id]);
+
+  if (loading) return <p className="p-6">Cargando propiedad...</p>;
+  if (!propiedad) return <p className="p-6">Propiedad no encontrada.</p>;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <div className="max-w-5xl mx-auto px-4 py-8">
+      {/* Imagen principal */}
       <img
-        src={property.image}
-        alt={property.title}
-        className="w-full h-72 object-cover rounded mb-6"
+        src={propiedad.image_url}
+        alt={propiedad.title}
+        className="w-full h-96 object-cover rounded-lg shadow"
       />
-      <h1 className="text-3xl font-bold text-emeraldDark font-sans mb-2">
-        {property.title}
-      </h1>
-      <p className="text-gray-600 font-questrial">{property.location}</p>
-      <p className="text-lg text-gray-800 font-questrial mt-2">
-        {property.type} • {property.operation}
-      </p>
-      <p className="text-gold text-2xl font-bold mt-4 font-sans">${property.price}</p>
 
-      <p className="mt-6 text-gray-700 font-questrial leading-relaxed">
-        Esta es una propiedad destacada en la zona. Cuenta con excelente ubicación, cercanía a servicios y gran potencial.
+      {/* Información */}
+      <h1 className="text-3xl font-bold mt-6">{propiedad.title}</h1>
+      <p className="text-emeraldDark text-2xl font-bold mt-2">
+        USD {Number(propiedad.price).toLocaleString("es-AR")}
       </p>
 
-      <div className="mt-8 flex gap-4">
+      <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
+        <div>📍 {propiedad.location || "Ubicación no definida"}</div>
+        <div>🏠 {propiedad.type || "Tipo no definido"}</div>
+        <div>🛏 {propiedad.bedrooms || 0} Dormitorios</div>
+        <div>🛁 {propiedad.bathrooms || 0} Baños</div>
+        <div>📐 {propiedad.size_m2 || 0} m²</div>
+      </div>
+
+      {/* Descripción */}
+      <p className="mt-6 text-gray-700 leading-relaxed">
+        {propiedad.description || "Sin descripción"}
+      </p>
+
+      {/* Botón de contacto */}
+      <div className="mt-8">
         <a
-          href="https://wa.me/5493795073930"
+          href={`https://wa.me/5491112345678?text=Hola, quiero información sobre la propiedad: ${propiedad.title}`}
           target="_blank"
-          rel="noopener noreferrer"
-          className="bg-emeraldDark text-white px-6 py-3 rounded hover:bg-emerald-800 transition"
+          rel="noreferrer"
+          className="inline-block bg-emeraldDark text-white px-6 py-3 rounded-lg shadow hover:bg-emerald-700"
         >
-          Contactar por WhatsApp
+          📲 Contactar por WhatsApp
         </a>
-        <Link to="/" className="underline text-gray-600 hover:text-gray-800">
-          Volver al inicio
-        </Link>
       </div>
     </div>
-  )
+  );
 }
 
-export default FichaPropiedad
+export default FichaPropiedad;
